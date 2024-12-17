@@ -9,7 +9,7 @@ on:
 
 
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/5 * * * *'    #runs every 5 minutes
 
   pull_request:
     branches:
@@ -37,7 +37,7 @@ jobs:
 
       - name: Execute Tests
         continue-on-error: true
-        run: mvn -DbrowserName="edge" -Dheadless="false" -Dtest="${{github.event.inputs.testsPath}}" test
+        run: mvn -DbrowserName="edge" -DheadlessExecution="false" -Dtest="${{github.event.inputs.testsPath}}" test
       - name: Generate Allure Report
         continue-on-error: true
         run: mvn allure:report
@@ -77,7 +77,7 @@ jobs:
 
       - name: Run Tests in Headless Mode in chrome
         continue-on-error: true
-        run: mvn -DBrowserName="Chrome" -Dheadless="true" -Dtest="${{ github.event.inputs.testsPath}}" test
+        run: mvn -DBrowserName="Chrome" -DheadlessExecution="true" -Dtest="${{ github.event.inputs.testsPath}}" test
       - name: Generate Allure Report
         continue-on-error: true
         run: mvn allure:report
