@@ -24,7 +24,7 @@ public class TestCase1 {
     }
     @BeforeMethod
     public void setup(){
-        driver = DriverFactory.initializingDriver(System.getProperty("browserName"),true);
+        driver = DriverFactory.initializingDriver(System.getProperty("browserName"),true,Boolean.parseBoolean(System.getProperty("headlessExecution")));
       // driver=new ChromeDriver();
       // driver.manage().window().maximize();
     }
