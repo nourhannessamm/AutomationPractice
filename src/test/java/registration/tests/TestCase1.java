@@ -51,6 +51,27 @@ public class TestCase1 {
                   .clickOnContinueButton();
 
     }
+    @Test
+    public void registrationScenario2(){
+        new HomePage(driver)
+                .navigateToHomePage()
+                .clickOnSignUpLoginButton();
+        new SignupOrLoginPage(driver)
+                .fillingInNewUserSignUpData(jsonFileManager.getTestData("name2"),jsonFileManager.getTestData("email2"))
+                .clickOnSignUpButton();
+        new SignupPage(driver)
+                .enterAccountInformation(jsonFileManager.getTestData("password2"), jsonFileManager.getTestData("day2"), jsonFileManager.getTestData("month2"), jsonFileManager.getTestData("year2"))
+                .enterAddressInformation(jsonFileManager.getTestData("firstName2"), jsonFileManager.getTestData("lastName2"), jsonFileManager.getTestData("companyName2"), jsonFileManager.getTestData("address1"), jsonFileManager.getTestData("address2"), jsonFileManager.getTestData("country"), jsonFileManager.getTestData("state"), jsonFileManager.getTestData("city"), jsonFileManager.getTestData("zipCode"), jsonFileManager.getTestData("number"))
+                .clickOnCreateAccountButton();
+        new AccountCreatedPage(driver)
+                .createAccountAssertions()
+                .clickOnContinueButton()
+                .clickOnDeleteButton();
+        new AccountDeletedPage(driver)
+                .AssertDeleteAccount()
+                .clickOnContinueButton();
+
+    }
     @AfterMethod
     public void tearDown(){
 
