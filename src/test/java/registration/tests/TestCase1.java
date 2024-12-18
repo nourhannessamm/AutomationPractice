@@ -20,7 +20,8 @@ public class TestCase1 {
     @BeforeClass
     public void DataFileParsing(){
         // as we need to do this only one time (Parsing the file only one time)
-        jsonFileManager = new JsonFileManager("src\\test\\resources\\TestDataJsonFile\\TestData.json");
+        jsonFileManager = new JsonFileManager("src/test/resources/TestDataJsonFile/TestData.json");
+
     }
     @BeforeMethod
     public void setup(){
