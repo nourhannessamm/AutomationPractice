@@ -96,3 +96,7 @@ jobs:
           name: Tests Report Headless_Ubuntu
           path: 'target/surefire-reports/TEST-*.xml'
           reporter: java-junit
+
+
+          # Add a comment
+          #This is a test change for GitHub Actions to test that pull request to main will trigger the workflow
